@@ -2,30 +2,28 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var sass = require('gulp-ruby-sass');
-var config = {
-    app: 'src',
-    dist: 'public'
-}
+var src = './src/public';
 
 gulp.task('sass', function() {
-    return gulp.src('dist/styles/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('dist/styles/'))
+    return sass(src+'/styles/')
+        .on('error',function(err){
+            console.error('Error',err.message)
+        })
+        .pipe(gulp.dest(src+'/styles/'))
         .pipe(reload({ stream:true }));
 });
 
-gulp.task('serve',function(){
+gulp.task('serve',function(){ 
     browserSync(
         {
             server: {
-              baseDir: './src',
-              index: '../index.html'
+              baseDir: src + '/../'
             }
         }
     );
-    //gulp.watch('dist/styles/*.scss', ['sass']);
-    gulp.watch('index.html').on('change',reload);
-    gulp.watch('src/**.*').on('change',reload);
+    gulp.watch(src+'/styles/*.scss', ['sass']);
+    
+    // gulp.watch('./'+config.app+'/**.*').on('change',reload);
 })
 
 gulp.task('default', function() {
