@@ -2,7 +2,6 @@ var Backbone = require('backbone');
 var template = require('../templates/nav.html');
 var style = require('../styles/nav.scss');
 
-console.log(template);
 var Nav = Backbone.View.extend({
   el: '#nav',
   events: {
@@ -14,6 +13,5 @@ var Nav = Backbone.View.extend({
   render: function(){
     this.$el.html(template);
   }
-})
-
+});
 module.exports = Nav;
