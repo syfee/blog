@@ -13,7 +13,6 @@ var Article = Backbone.View.extend({
 
   },
   render: function(article){
-    console.log(article);
     this.$el.html(this.template(article));
     return this;
   }

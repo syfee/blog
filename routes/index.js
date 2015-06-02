@@ -1,6 +1,12 @@
 var fs = require('fs');
+
+exports.article = require('./article.js');
+exports.user = require('./user.js');
+exports.login = require('./login.js');
+exports.admin = require('./admin.js');
+
+
 exports.index = function(req, res, next){
-  console.log(__dirname);
   fs.readFile('index.html',function(err,data){
     console.log(data);
     if(err){

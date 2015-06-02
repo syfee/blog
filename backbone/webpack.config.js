@@ -7,10 +7,13 @@ var build = '../build';
 module.exports = {
   //This is enabled by default in watch mode.
   cache: true,
-  entry: [app+'/scripts/main'],
+  entry: {
+    index: app+'/scripts/index',
+    admin: app+'/scripts/admin'
+  },
   output: {
     path: path.join(__dirname, build),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     publicPath: '/scripts/',
     //The filename of non-entry chunks as relative path inside the output.path directory. 
     chunkFilename: "[chunkhash].js"
