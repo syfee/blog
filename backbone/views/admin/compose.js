@@ -1,38 +1,67 @@
 var Backbone = require('backbone');
+var _ = require('underscore');
 var style = require('../../styles/admin/compose.scss');
 var template = require('../../templates/admin/compose.html');
+var Interface = require('../../scripts/interface.js');
+var self;
 var Compose = Backbone.View.extend({
   el: '#main',
-  events:{
-    'click #submit ': 'submit'
+  events: {
+    'click #saveBtn ': 'save'
   },
-  initialize: function(){
+  template: _.template(template),
+  initialize: function() {
+    self = this;
+  },
+  render: function(article) {1
+    self.article = article;
+    if (!article) {
+      article = {
+        title: "",
+        content: "",
+        tags: [],
+        published: false
+      };
+      self.method = "post";
+    } else {
+      self.method = 'put';
+    }
+    this.$el.html(self.template(article));
+  },
+  validate: function() {
 
   },
-  render: function(){
-    this.$el.html(template);
-  },
-  submit: function(){
+  save: function() {
     var $title = $('#title');
     var $content = $('#content');
+    var $publishBtn = $('#publishBtn');
+    var $tags = $('#tags');
     var title = $title.val().trim();
     var content = $content.val().trim();
-    console.log(title,content);
-    if(title && content){
-      $.ajax({
-        url: 'http://localhost:3000/article',
-        method: 'POST',
-        data: {
-          title: title,
-          content: content
-        }
-      })
-      .done(function(ret){
-        console.log('success');
-      })
-      .fail(function(ret){
-        console.log('fail');
-      });
+    var published = $publishBtn[0].checked;
+    var tags = $tags.val().trim().split(',');
+
+    if (title && content) {
+      self.article.title = title;
+      self.article.content = content;
+      self.article.published = published;
+      self.article.tags = tags;
+      if (self.method == "post") {
+        Interface.createArticle().
+        done(function(ret) {
+          if (ret.errcode === 0) {
+            cocnsole.log('create article success');
+          }
+        });
+      } else if (self.method == 'put') {
+        console.log(self.article);
+        Interface.updateArticle(self.article).
+        done(function(ret) {
+          if (ret.errcode === 0) {
+            console.log('update article success');
+          }
+        });
+      }
     }
   }
 });

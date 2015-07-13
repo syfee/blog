@@ -8,13 +8,15 @@ var Backbone = require('backbone');
 var Router = Backbone.Router.extend({
   routes:{
     '': 'main',
-    'newpost': 'newPost'
+    'newpost': 'newPost',
+    
   },
   main: function(){
-    console.log('main');
+    var MainPage = require('../views/admin/mainPage');
+    var mainPage = new MainPage();
   },
   newPost: function(){
-    require([],function(){
+    require.ensure([],function(){
       var Compose = require('../views/admin/compose.js');
       var compose = new Compose();
       console.log(compose);

@@ -4,6 +4,7 @@ exports.article = require('./article.js');
 exports.user = require('./user.js');
 exports.login = require('./login.js');
 exports.admin = require('./admin.js');
+exports.category = require('./category.js');
 
 
 exports.index = function(req, res, next){

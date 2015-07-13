@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var sass = require('gulp-ruby-sass');
-var src = './src/public';
+var src = './public';
 
 gulp.task('sass', function() {
     return sass(src+'/styles/')
@@ -17,7 +17,7 @@ gulp.task('serve',function(){
     browserSync(
         {
             server: {
-              baseDir: src + '/../'
+              baseDir: src
             }
         }
     );

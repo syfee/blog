@@ -24,16 +24,26 @@ app.use(function(req,res,next){
   return next();
 });
 
+app.use(function(req, res, next){
+  res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE');
+  return next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('body-parser')());
 
 app.get('/', routes.index);
 app.get('/login', routes.login);
 app.get('/admin', routes.admin);
-
+console.log(routes.article.delete);
 app.post('/login', routes.user.verify);
+
 app.get('/article', routes.article.list);
 app.post('/article', routes.article.create);
+app.put('/article', routes.article.update);
+app.delete('/article', routes.article.delete);
+
+app.get('/category',routes.category.list);
 
 app.listen(app.get('port'),function(){
   console.log('express started on http://localhost:' + app.get('port'));

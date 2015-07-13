@@ -32,7 +32,8 @@
     "underscore": "^1.8.3",
     "backbone": "^1.2.0",
     "jquery": "^2.1.4",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "marked": "^0.3.3"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
