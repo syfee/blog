@@ -1,4 +1,3 @@
-Building a blog with nodejs;
-Follow the example from <<pratical nodejs>>;
-5.6 scaffoliding
-
+###Building a blog with nodejs;
+####Front end: Backbone + Bootstrap + Webpack;
+####Backend: Nodejs + Express + MongoDB;
