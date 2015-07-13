@@ -41,7 +41,7 @@ exports.update = function(req, res, next){
   req.models.Article.findOne({_id: req.body._id},function(err,doc){
     if(doc){
       for(var o in req.body){
-        doc[o] = req.body[o]
+        doc[o] = req.body[o];
       }
       doc.date = new Date().toLocaleString();
       doc.save();
