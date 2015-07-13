@@ -1,5 +1,6 @@
 // var Colleciton = require('../collections/articles.js');
 var Article =  require('./article.js');
+var Interface = require('../scripts/interface.js');
 var self;
 var Articles = Backbone.View.extend({
   tagName: 'ul',
@@ -9,15 +10,7 @@ var Articles = Backbone.View.extend({
   },
   initialize: function(){
     self = this;
-    this.loadArticles();
-  },
-  loadArticles: function(){
-    // this.articles = ;
-    $.ajax({
-      url: 'http://localhost:3000/article',
-      type: 'GET',
-      dataType: 'json'
-    })
+    Interface.loadArticles()
     .done(function(data) {
       self.render(data);
     })
@@ -27,7 +20,9 @@ var Articles = Backbone.View.extend({
     .always(function() {
     });
   },
+
   render: function(articles){
+    console.log(articles);
     articles.forEach(this.addOne,this);
   },
   addOne: function(articalModel){

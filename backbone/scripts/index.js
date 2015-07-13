@@ -1,13 +1,22 @@
+
 var Nav = require('../views/nav.js');
 var Content = require('../views/content.js');
 
 var nav = new Nav();
 var content = new Content();
 
-// var router = Backbone.Router.extend({
+// var Backbone = require('backbone');
+// var Router = Backbone.Router.extend({
 //   routes:{
 //     '': index,
 //     'login': login
 //   },
-  
-// })
+// });
+
+
+// $(function(){
+//   var router = new Router();  
+//   Backbone.history.start({
+//     pushState: false
+//   });
+// });

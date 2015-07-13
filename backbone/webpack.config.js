@@ -1,22 +1,23 @@
+
 var path = require('path');
 var webpack = require('webpack');
 
-var app = './';
-var build = '../build';
+var src = './';
+var build = '../public/scripts';
 
 module.exports = {
   //This is enabled by default in watch mode.
   cache: true,
   entry: {
-    index: app+'/scripts/index',
-    admin: app+'/scripts/admin'
+    index: src+'/scripts/index',
+    admin: src+'/scripts/admin'
   },
   output: {
     path: path.join(__dirname, build),
     filename: '[name].bundle.js',
     publicPath: '/scripts/',
     //The filename of non-entry chunks as relative path inside the output.path directory. 
-    chunkFilename: "[chunkhash].js"
+    chunkFilename: "[name].js"
   },
   module: {
     loaders: [

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+	<script type="text/javascript" src="http://libs.useso.com/js/jquery/2.1.1-rc2/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			padding-bottom: 40px;
+			background-color: #eee;
+		}
+
+		.form-signin {
+			max-width: 330px;
+			padding: 15px;
+			margin: 0 auto;
+		}
+		.form-signin .form-signin-heading,
+		.form-signin .checkbox {
+			margin-bottom: 10px;
+		}
+		.form-signin .checkbox {
+			font-weight: normal;
+		}
+		.form-signin .form-control {
+			position: relative;
+			height: auto;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 10px;
+			font-size: 16px;
+		}
+		.form-signin .form-control:focus {
+			z-index: 2;
+		}
+		.form-signin input[type="email"] {
+			margin-bottom: -1px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+		.form-signin input[type="password"] {
+			margin-bottom: 10px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+		header{
+			background-color: rgb(40,96,144);
+			color: #fff;
+		}
+		h1{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form class="form-signin">
+			<label for="username" class="sr-only">username</label>
+			<input type="username" id="username" class="form-control" placeholder="用户名" required autofocus>
+			<label for="password" class="sr-only">password</label>
+			<input type="password" id="password" class="form-control" placeholder="密码" required>
+
+			<button class="btn btn-lg btn-primary btn-block" type="button" id='login'>登录</button>
+		</form>
+	</div> <!-- /container -->
+	<script type="text/javascript">
+	
+		var $username = $('#username');
+		var $password = $('#password');
+		var $login = $('#login');
+		$login.click(function(event) {
+			$.ajax({
+				method: 'POST',
+				url: 'http://localhost:3000/login',
+				data: {
+					username: $username.val(),
+					password: $password.val(),
+				},
+				success: function(ret){
+					if(ret.errcode === 0){
+						location.href = 'http://localhost:3000/admin';
+					}else{
+						alert('error');
+					}
+				}
+			});
+		});
+
+</script>
+</body>
+</html>

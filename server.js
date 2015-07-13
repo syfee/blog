@@ -31,6 +31,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('body-parser')());
 
@@ -40,8 +41,13 @@ app.post('/login', routes.user.verify);
 
 app.get('/admin', routes.admin);
 
+
 app.get('/article', routes.article.list);
 app.post('/article', routes.article.create);
+app.put('/article', routes.article.update);
+app.delete('/article', routes.article.delete);
+
+app.get('/category',routes.category.list);
 
 app.listen(app.get('port'), function() {
   console.log('express started on http://localhost:' + app.get('port'));

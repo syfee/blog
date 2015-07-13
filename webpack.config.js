@@ -48,7 +48,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var app = './app';
-var build = './build';
+var build = './public/scripts';
 
 // removes a lot of debugging code in React
 var myPlugin = new webpack.DefinePlugin({

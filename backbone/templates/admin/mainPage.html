@@ -1,0 +1,25 @@
+<table id="articles" class="table table-striped table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>title</th>
+			<th>published</th>
+			<th>edit</th>
+			<th>delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for(var i = 0, l=articles.length; i < l; i++ ){ %>
+		<tr>
+			<td><%= articles[i].title %></td>
+			<td><%= articles[i].published %></td>
+			<td>
+				<button class='btn edit' data-index="<%= i %>">edit</button>
+			</td>
+			<td>
+				<button class="btn delete btn-warn" data-index="<%= i %>">delete</button>
+			</td>
+			
+		</tr>
+		<% } %>
+	</tbody>
+</table>
