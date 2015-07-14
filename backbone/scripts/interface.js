@@ -1,9 +1,8 @@
 var $ = require('jquery');
-var host = "http://localhost:3000/";
+var host = location.href.indexOf("localhost") > -1 ? "http://localhost:3000/" : "http://115.28.7.11:3000/";
 var interface = {
   loadArticles: function(data){
     // this.articles = ;
-    
     return $.ajax({
       url: host+'article',
       type: 'GET',

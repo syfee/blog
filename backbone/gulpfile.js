@@ -80,9 +80,9 @@ gulp.task("cp:html",function(){
     }).pipe(gulp.dest("../public/"));
 });
 gulp.task("cp:css",function(){
-    gulp.src(["*.css"],{
+    gulp.src(["styles/*.css"],{
         base: "."
-    }).pipe(gulp.dest("../public/styles/"));
+    }).pipe(gulp.dest("../public/"));
 });
 gulp.task("cp:img",function(){
     gulp.src(["images/**/*.*"],{
