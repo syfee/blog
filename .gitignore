@@ -11,3 +11,5 @@ credentials.js
 public*
 
 sftp-config.json
+
+.server.js.swp
