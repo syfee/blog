@@ -4,8 +4,12 @@ body{
 ul{
 	padding: 17px;
 }
+
 #container{
-	margin-top: 50px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 50px;
+  max-width: 1100px;
 }
 #shade{
 	position: absolute;

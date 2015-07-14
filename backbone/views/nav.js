@@ -6,7 +6,7 @@ console.log($sidebar);
 var Nav = Backbone.View.extend({
   el: '#nav',
   events: {
-  	'click button': 'showSidebar'
+  	'click button': 'toggleSidebar'
   },
   initialize: function(){
     this.render();
@@ -14,9 +14,9 @@ var Nav = Backbone.View.extend({
   render: function(){
     this.$el.html(template);
   },
-  showSidebar: function(){
+  toggleSidebar: function(){
     console.log("trigger");
-  	$sidebar.trigger('show');
+  	$sidebar.trigger('toggle');
   }
 });
 module.exports = Nav;

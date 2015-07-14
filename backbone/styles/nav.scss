@@ -1,3 +1,34 @@
 #nav{
 	
+	background-color: #07CF92;
+	border-color: #D8A1B6;
+	a{
+		color: #9E1908;
+
+	}
+	#button-sidebar {
+		position: relative;
+		display: none;
+  float: right;
+  padding: 4px 5px;
+  margin-top: 12px;
+  margin-right: 12px;
+  margin-bottom: 8px;
+  background-color: rgba(100, 34, 34, 0);
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+		.icon-bar{
+			background-color: #fff;
+			display: block;
+			width: 22px;
+			height: 2px;
+			border-radius: 1px;
+		}
+	}
+}	
+@media (max-width: 767px){
+	#nav #button-sidebar{
+		display: block;
+	}
 }

@@ -11,27 +11,33 @@ var Sidebar = Backbone.View.extend({
   initialize: function(){
   	self = this;
     this.render();
-    this.$el.on("show",function(){
-      self.show();
-    });
-    this.$el.on("click",function(){
-    	self.hide();
+    this.$el.on("toggle",function(){
+      self.toggle();
     });
   },
   render: function(){
     this.$el.html(template);
   },
+  toggle: function(){
+    if(self.showing){
+      self.hide();
+    }
+    else{
+      self.show();
+    }
+  },
   show: function(){
-    $shade.fadeIn();
+    $shade.fadeIn().on("click",self.hide);
   	this.$el.addClass("slideIn");
-    // function(){
-      // $(this).addClass("slideIn");
-    // }
-    // );
+    self.showing = true;
+    
   },
   hide: function(){
+    $shade.fadeIn().off("click");
     $shade.fadeOut();
-  	this.$el.removeClass("slideIn");
+  	self.$el.removeClass("slideIn");
+    self.showing = false;
+
   }
 });
 module.exports = Sidebar;
