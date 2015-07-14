@@ -74,7 +74,21 @@ gulp.task("webpack:build-dev", function(callback) {
 
 // Production build
 gulp.task("build", ["webpack:build"]);
-
+gulp.task("cp:html",function(){
+    gulp.src(["*.html"],{
+        base: "."
+    }).pipe(gulp.dest("../public/"));
+});
+gulp.task("cp:css",function(){
+    gulp.src(["*.css"],{
+        base: "."
+    }).pipe(gulp.dest("../public/styles/"));
+});
+gulp.task("cp:img",function(){
+    gulp.src(["images/**/*.*"],{
+        base: "."
+    }).pipe(gulp.dest("../public/"));
+});
 gulp.task("webpack:build", function(callback) {
     // modify some webpack config options
     var myConfig = Object.create(webpackConfig);

@@ -9,3 +9,5 @@ bower_components*
 credentials.js
 
 public*
+
+sftp-config.json
