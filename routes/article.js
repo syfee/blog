@@ -1,6 +1,7 @@
 
 exports.list = function(req, res, next){
   req.models.Article.find(req.query,function(err,articles){
+    
     res.type('json');
     res.status('200');
     res.send(articles);

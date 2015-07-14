@@ -1,12 +1,13 @@
 var $ = require('jquery');
 var host = "http://localhost:3000/";
 var interface = {
-  loadArticles: function(){
+  loadArticles: function(data){
     // this.articles = ;
     
     return $.ajax({
       url: host+'article',
       type: 'GET',
+      data: data
     });
   },
   deleteArticle: function(id){

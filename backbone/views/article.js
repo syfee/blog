@@ -2,6 +2,7 @@ var Backbone = require('backbone');
 var _ = require('underscore');
 var template = require('../templates/article.html');
 var marked = require('marked');
+var css = require('../styles/article.scss');
 
 var Article = Backbone.View.extend({
   tagName: 'li',

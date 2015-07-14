@@ -13,8 +13,7 @@ var Compose = Backbone.View.extend({
   initialize: function() {
     self = this;
   },
-  render: function(article) {1
-    self.article = article;
+  render: function(article) {
     if (!article) {
       article = {
         title: "",
@@ -26,6 +25,8 @@ var Compose = Backbone.View.extend({
     } else {
       self.method = 'put';
     }
+    self.article = article;
+    
     this.$el.html(self.template(article));
   },
   validate: function() {
@@ -47,10 +48,10 @@ var Compose = Backbone.View.extend({
       self.article.published = published;
       self.article.tags = tags;
       if (self.method == "post") {
-        Interface.createArticle().
+        Interface.createArticle(self.article).
         done(function(ret) {
           if (ret.errcode === 0) {
-            cocnsole.log('create article success');
+            console.log('create article success');
           }
         });
       } else if (self.method == 'put') {

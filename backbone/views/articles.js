@@ -10,7 +10,9 @@ var Articles = Backbone.View.extend({
   },
   initialize: function(){
     self = this;
-    Interface.loadArticles()
+    Interface.loadArticles({
+      published: true
+    })
     .done(function(data) {
       self.render(data);
     })
