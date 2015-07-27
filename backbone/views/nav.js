@@ -2,7 +2,6 @@ var Backbone = require('backbone');
 var template = require('../templates/nav.html');
 var style = require('../styles/nav.scss');
 var $sidebar = $('#sidebar');
-console.log($sidebar);
 var Nav = Backbone.View.extend({
   el: '#nav',
   events: {
@@ -15,7 +14,6 @@ var Nav = Backbone.View.extend({
     this.$el.html(template);
   },
   toggleSidebar: function(){
-    console.log("trigger");
   	$sidebar.trigger('toggle');
   }
 });

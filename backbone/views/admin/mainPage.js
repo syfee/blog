@@ -16,7 +16,6 @@ var MainPage = Backbone.View.extend({
     .done(function(data) {
       console.log(data);
       self.articles = data;
-
       self.render(data);
     })
     .fail(function() {

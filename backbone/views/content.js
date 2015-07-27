@@ -8,6 +8,5 @@ var Content = Backbone.View.extend({
     this.$el.html(articles.el);
   }
 });
-console.log(Content);
 module.exports = Content;
 

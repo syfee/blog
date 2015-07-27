@@ -13,3 +13,5 @@ public*
 sftp-config.json
 
 .server.js.swp
+
+db*

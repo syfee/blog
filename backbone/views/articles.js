@@ -24,7 +24,6 @@ var Articles = Backbone.View.extend({
   },
 
   render: function(articles){
-    console.log(articles);
     articles.forEach(this.addOne,this);
   },
   addOne: function(articalModel){

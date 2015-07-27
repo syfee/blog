@@ -17,7 +17,7 @@ module.exports = {
     filename: '[name].bundle.js',
     publicPath: '/scripts/',
     //The filename of non-entry chunks as relative path inside the output.path directory. 
-    chunkFilename: "[name].js"
+    chunkFilename: "[name].[hash].js"
   },
   module: {
     loaders: [

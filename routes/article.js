@@ -1,7 +1,7 @@
 
 exports.list = function(req, res, next){
   req.models.Article.find(req.query,function(err,articles){
-    
+    console.log(articles);
     res.type('json');
     res.status('200');
     res.send(articles);
@@ -44,7 +44,7 @@ exports.update = function(req, res, next){
       for(var o in req.body){
         doc[o] = req.body[o];
       }
-      doc.date = new Date().toLocaleString();
+      // doc.date = new Date().toLocaleString();
       doc.save();
       res.status(200);
       res.type('json');

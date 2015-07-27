@@ -1,25 +1,29 @@
-[{
+{
 	"title": "1",
 	"content": "1",
 	"category": "1",
 	"tags": [1,1,1],
+	"date": "7/27/2015, 3:42:32 PM",
 	"published": true
-}, {
+} {
 	"title": "2",
 	"content": "2",
 	"category": "1",
 	"tags": [2,2,2],
+	"date": "7/27/2015, 3:42:32 PM",
 	"published": true
-}, {
+} {
 	"title": "3",
 	"content": "3",
 	"category": "2",
 	"tags": [1,1,1],
+	"date": "7/27/2015, 3:42:32 PM",
 	"published": false
-}, {
+} {
 	"title": "4",
 	"content": "4",
 	"category": "1",
 	"tags": [1,1,1],
+	"date": "7/27/2015, 3:42:32 PM",
 	"published": false
-}]
+}
