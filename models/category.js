@@ -5,5 +5,5 @@ var categorySchema = mongoose.Schema({
   posts: Number
 });
 
-var category = mongoose.model('category',categorySchema);
+var category = mongoose.model('category', categorySchema);
 module.exports = category;

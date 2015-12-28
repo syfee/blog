@@ -9,5 +9,5 @@ var articleSchema = mongoose.Schema({
   published: Boolean
 });
 
-var article = mongoose.model('article',articleSchema);
+var article = mongoose.model('article', articleSchema);
 module.exports = article;

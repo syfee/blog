@@ -20,14 +20,15 @@ var Article = Backbone.View.extend({
     //   }
     // });
   },
+
   render: function(article) {
-    console.log(article);
     article.content = marked(article.content);
     this.$el.html(this.template(article));
     this.$el.find('pre code').each(function(i, block) {
       console.log(block);
       highlight.highlightBlock(block);
     });
+
     return this;
   }
 });

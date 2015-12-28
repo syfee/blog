@@ -8,7 +8,7 @@ var Articles = Backbone.View.extend({
   events: {
 
   },
-  initialize: function(){
+  initialize: function() {
     self = this;
     Interface.loadArticles({
       published: true
@@ -17,16 +17,17 @@ var Articles = Backbone.View.extend({
       self.render(data);
     })
     .fail(function() {
-      console.log("error");
+      console.log('error');
     })
     .always(function() {
     });
   },
 
-  render: function(articles){
-    articles.forEach(this.addOne,this);
+  render: function(articles) {
+    articles.forEach(this.addOne, this);
   },
-  addOne: function(articalModel){
+
+  addOne: function(articalModel) {
     var view = new Article();
     this.$el.append(view.render(articalModel).el);
   }

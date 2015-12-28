@@ -1,17 +1,23 @@
 node_modules*
 
-log
-
 bower_components*
 
-.sass-cache
+backbone*
+
+public*
+
+build*
+
+db*
+
+log
 
 credentials.js
 
-public*
+.sass-cache
 
 sftp-config.json
 
 .server.js.swp
 
-db*
+npm-debug.log

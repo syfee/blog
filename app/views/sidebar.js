@@ -8,36 +8,37 @@ var Sidebar = Backbone.View.extend({
   events: {
     // 'click #sidebar': "hide"
   },
-  initialize: function(){
-  	self = this;
+  initialize: function() {
+    self = this;
     this.render();
-    this.$el.on("toggle",function(){
+    this.$el.on('toggle', function() {
       self.toggle();
     });
   },
-  render: function(){
+
+  render: function() {
     this.$el.html(template);
   },
-  toggle: function(){
-    if(self.showing){
+
+  toggle: function() {
+    if (self.showing) {
       self.hide();
-    }
-    else{
+    } else {
       self.show();
     }
   },
-  show: function(){
-    $shade.fadeIn().on("click",self.hide);
-  	this.$el.addClass("slideIn");
-    self.showing = true;
-    
-  },
-  hide: function(){
-    $shade.fadeIn().off("click");
-    $shade.fadeOut();
-  	self.$el.removeClass("slideIn");
-    self.showing = false;
 
+  show: function() {
+    $shade.fadeIn().on('click', self.hide);
+    this.$el.addClass('slideIn');
+    self.showing = true;
+  },
+
+  hide: function() {
+    $shade.fadeIn().off('click');
+    $shade.fadeOut();
+    self.$el.removeClass('slideIn');
+    self.showing = false;
   }
 });
 module.exports = Sidebar;
