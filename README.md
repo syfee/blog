@@ -1,15 +1,15 @@
-###Building a blog with nodejs;
-####Front end: Backbone + Bootstrap + Webpack;
-####Backend: Nodejs + Express + MongoDB;
+### Building a blog with nodejs;
+#### Front end: Backbone + Bootstrap + Webpack;
+#### Backend: Nodejs + Express + MongoDB;
 
-#####Build
+##### Build
 ```
 cd app && gulp build
 ```
 
-all front end source code are located in `app` directory, `gulp build` will bundle the js files into `public` directory with `webpack`;
+All front end source code are located in `app` directory, `gulp build` will bundle the js files into `public` directory;
 
-####start the server
+#### start the server
 ```
 nodemon server.js
 ```
